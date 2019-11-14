@@ -1,4 +1,20 @@
 {
-  "name": "Bakaleech v1.31415, a rapidleech fork",
+  "name": "Bakaleech v2.01415, a rapidleech fork",
   "repository": "https://github.com/ItoshikiMonset/Bakaleech"
+  "success_url": "",
+
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+      },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs#v83"
+     },
+     {
+      "url": "https://github.com/heroku/heroku-buildpack-apt"
+     },
+    {
+    "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab.git"
+    }
+    ]
 }
