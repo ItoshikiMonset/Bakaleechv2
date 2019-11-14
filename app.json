@@ -3,27 +3,10 @@
   "repository": "https://github.com/Th3-822/rapidleech",
   "logo": "https://small-sharp-tool.com/logo.svg",
   "success_url": "",
-  "env": {
-    "BOT_TOKEN": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
-      "value": "973281407:AAEDs2NEgXIHjO1SVQfcVl2BftrH5x5UVmw"
-    },
-    "BOT_USERNAME": {
-      "description": "The number of processes to run.",
-      "value": "therapidleechbot"
-    },
-    "ADMIN_ID": {
-    "description": "The Ids of Admins.",
-    "value": "401643149,464848593"
-    }
-  },
   "buildpacks": [
     {
       "url": "heroku/php"
       },
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs#v83"
-     },
      {
       "url": "https://github.com/heroku/heroku-buildpack-apt"
      },
