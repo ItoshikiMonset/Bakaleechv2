@@ -2,7 +2,6 @@
   "name": "Bakaleech v2.01415, a rapidleech fork",
   "repository": "https://github.com/ItoshikiMonset/Bakaleech"
   "success_url": "",
-
   "buildpacks": [
     {
       "url": "heroku/php"
