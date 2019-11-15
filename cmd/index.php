@@ -89,7 +89,7 @@ if (isset($_POST['cmd'])) {
 <?php endif; ?>
 		
 <?php elseif($radioval == "folder") : ?>
-			<?php $cmd=shell_exec("rclone dedupe move /app/files/" .$cmd1. " Gdrive:Bakaleech/".$cmd1); ?>
+			<?php $cmd=shell_exec("rclone --ignore-existing --dedupe-mode skip copy /app/files/" .$cmd1. " Gdrive:Bakaleech/".$cmd1); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
