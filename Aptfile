@@ -4,7 +4,7 @@ iputils-ping
 aria2
 screen
 git
-rclone
+http://neurodebian.ovgu.de/debian/pool/main/r/rclone/rclone_1.41-1~ndall0_amd64.deb
 python
 build-essential
 python3
