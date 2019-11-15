@@ -78,7 +78,7 @@ if (isset($_POST['cmd'])) {
 
 	
 <?php if($radioval == "file") : ?>
-<?php		$cmd=shell_exec("rclone move /app/files/" .$cmd1. " Gdrive:Bakaleech"); ?>
+<?php		$cmd=shell_exec("rclone move /app/files/" .$cmd1. " gdrive:Bakaleech"); ?>
 		<?php if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
