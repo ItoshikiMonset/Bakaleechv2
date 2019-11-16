@@ -77,6 +77,7 @@ $(function() {
 <label for="rena">
 <input type="radio" name="myradio" value="ren" id="rena"><b>Rename</b><br>
 </label><br>
+	
 <div id="text1"> 
 <b>Enter File/Folder Name:</b><br>
 <input type="text" class="form-control" name="cmd" placeholder="File/Folder or Commad"><br>
@@ -89,6 +90,7 @@ $(function() {
 <input type="text" class="form-control" name="rename2" placeholder="Modified name you want"><br>
 </div> 
 
+	
 <div id="text3"> 
 <b>Enter link/magnet:</b><br>
 <input type="text" class="form-control" name="cmd2" placeholder="Magnet or dl"><br>
@@ -132,8 +134,8 @@ $(function() {
         </pre>
 <?php endif; ?>
 	
-<?php elseif($radioval == "aria2") : ?>
-			<?php $cmd=shell_exec("cd && aria2c -d '/app/files/'  '.$ar1.'"); ?>
+<?php elseif($radioval == "aria") : ?>
+			<?php $cmd=shell_exec("aria2c -d './app/files/'  '.$ar1.'"); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
