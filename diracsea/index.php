@@ -12,7 +12,7 @@ $CONFIG = '{"lang":"en","error_reporting":false,"show_hidden":true,"hide_Cols":f
 define('VERSION', '2.3.8');
 
 //Application Title
-define('APP_TITLE', 'Tiny File Manager');
+define('APP_TITLE', 'Dirac Sea Manager');
 
 // Auth with login/password (set true/false to enable/disable it)
 // Is independent from IP white- and blacklisting
