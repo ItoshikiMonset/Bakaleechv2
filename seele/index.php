@@ -124,7 +124,7 @@ $(function() {
 <?php endif; ?>
 	
 <?php elseif($radioval == "mfolder") : ?>
-			<?php $cmd=shell_exec("rclone --transfers 4 --ignore-existing --drive-chunk-size 32M move /app/files/" .$cmd1. " gdrive:Bakaleech/".$cmd1); ?>
+			<?php $cmd=shell_exec("rclone copy /app/files/" .$cmd1. " mega:/".$cmd1); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
