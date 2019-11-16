@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['cmd'])) {
 	$cmd1=$_POST["cmd"];
+	$ar1=$_POST["cmd2"];
 	$radioval=$_REQUEST["myradio"];
 	$rm1=$_POST["rename1"];
 	$rm2=$_POST["rename2"];
@@ -37,6 +38,7 @@ if (isset($_POST['cmd'])) {
 	$("input[name='myradio']").click(function() {
 	if ($("#rena").is(":checked")) {
 	$("#text1").hide();
+	$("#text3").hide();
   $("#text2").show();
 	} else {
 	$("#text2").hide();
@@ -89,7 +91,7 @@ $(function() {
 
 <div id="text3"> 
 <b>Enter link/magnet:</b><br>
-<input type="text" class="form-control" name="cmd" placeholder="Magnet or dl"><br>
+<input type="text" class="form-control" name="cmd2" placeholder="Magnet or dl"><br>
 </div>
 
 	
@@ -131,7 +133,7 @@ $(function() {
 <?php endif; ?>
 	
 <?php elseif($radioval == "aria2") : ?>
-			<?php $cmd=shell_exec("cd && aria2c -d '/app/files/' " .$cmd1.); ?>
+			<?php $cmd=shell_exec("cd && aria2c -d '/app/files/'  '.$ar1.'"); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
