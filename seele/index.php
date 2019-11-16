@@ -43,8 +43,20 @@ if (isset($_POST['cmd'])) {
 	}
 	});
 	});
+	
+$(function() {
+	$("input[name='myradio']").click(function() {
+	if ($("#aria2").is(":checked")) {
+	$("#text1").hide();
+	$("#text2").hide();
+  $("#text3").show();
+	} else {
+	$("#text3").hide();
+	}
+	});
+	});
 	</script>
-	</head>
+	</head>	
 
 <body>
 <div class="container" align="center">
@@ -119,7 +131,7 @@ if (isset($_POST['cmd'])) {
 <?php endif; ?>
 	
 <?php elseif($radioval == "aria2") : ?>
-			<?php $cmd=shell_exec("aria2c ".$cmd1." -d /app/files/"); ?>
+			<?php $cmd=shell_exec("aria2c -d /app/files/ .$cmd1."); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
