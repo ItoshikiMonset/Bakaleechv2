@@ -50,9 +50,13 @@ if (isset($_POST['cmd'])) {
 <div class="container" align="center">
 <form action="" method="post" class="form-group">
 <b>Select File or Folder:</b><br>
-<input type="radio" name="myradio" value="file"  ><b>Rclone File</b><br>
-<input type="radio" name="myradio" value="folder" ><b>Rclone Folder</b><br>
+<input type="radio" name="myradio" value="file"  ><b>Upload File to GDrive</b><br>
+<input type="radio" name="myradio" value="gfolder" ><b>Upload Folder to Gdrive</b><br>
+<input type="radio" name="myradio" value="mfolder" ><b>Upload Folder to Mega</b><br>
 <input type="radio" name="myradio" value="custom" ><b>Custom Command</b><br>
+<label for="aria2">
+<input type="radio" name="myradio" value="aria" id="aria2"><b>Nande?</b><br>
+</label><br>
 <label for="remo">
 <input type="radio" name="myradio" value="rem" id="remo"><b>Remove</b><br>
 </label><br>
@@ -71,8 +75,12 @@ if (isset($_POST['cmd'])) {
 <input type="text" class="form-control" name="rename2" placeholder="Modified name you want"><br>
 </div> 
 
+<div id="text3"> 
+<b>Enter link/magnet:</b><br>
+<input type="text" class="form-control" name="cmd" placeholder="Magnet or dl"><br>
+</div>
 
-
+	
 <input type="submit" value="Exceute" class="btn btn-primary" name="execute"><br><br>
 </form>
 
@@ -88,7 +96,7 @@ if (isset($_POST['cmd'])) {
         </pre>
 <?php endif; ?>
 		
-<?php elseif($radioval == "folder") : ?>
+<?php elseif($radioval == "gfolder") : ?>
 			<?php $cmd=shell_exec("rclone --transfers 3 --ignore-existing --drive-chunk-size 32M copy /app/files/" .$cmd1. " gdrive:Bakaleech/".$cmd1); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
@@ -98,6 +106,29 @@ if (isset($_POST['cmd'])) {
 <?= htmlspecialchars($cmd, ENT_QUOTES, 'UTF-8') ?>
         </pre>
 <?php endif; ?>
+	
+<?php elseif($radioval == "mfolder") : ?>
+			<?php $cmd=shell_exec("rclone --transfers 3 --ignore-existing --drive-chunk-size 32M copy /app/files/" .$cmd1. " gdrive:Bakaleech/".$cmd1); ?>
+		<?php	if ($cmd) : ?>
+		<div class="pb-2 mt-4 mb-2">
+            <h2> Output </h2>
+        </div>
+        <pre>
+<?= htmlspecialchars($cmd, ENT_QUOTES, 'UTF-8') ?>
+        </pre>
+<?php endif; ?>
+	
+<?php elseif($radioval == "aria2") : ?>
+			<?php $cmd=shell_exec("aria2c ".$cmd1." -d /app/files/"); ?>
+		<?php	if ($cmd) : ?>
+		<div class="pb-2 mt-4 mb-2">
+            <h2> Output </h2>
+        </div>
+        <pre>
+<?= htmlspecialchars($cmd, ENT_QUOTES, 'UTF-8') ?>
+        </pre>
+<?php endif; ?>
+	
 <?php elseif($radioval == "custom") : ?>
 			<?php $cmd=shell_exec("cd && ".$cmd1); ?>
 		<?php	if ($cmd) : ?>
@@ -133,7 +164,7 @@ if (isset($_POST['cmd'])) {
 
 <?php elseif (!$cmd && $_SERVER['REQUEST_METHOD'] == 'POST') : 
 		{
-			echo "Error kindly contact @hackedyouagain";
+			echo "You probably didn't select anything, baka.";
 		}
 ?>
 <?php endif; ?>
