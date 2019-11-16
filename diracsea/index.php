@@ -73,7 +73,7 @@ $root_path = $_SERVER['DOCUMENT_ROOT'].'/files';
 
 // Root url for links in file manager.Relative to $http_host. Variants: '', 'path/to/subfolder'
 // Will not working if $root_path will be outside of server document root
-$root_url = '';
+$root_url = '/files/';
 
 // Server hostname. Can set manually if wrong
 $http_host = $_SERVER['HTTP_HOST'];
@@ -91,7 +91,7 @@ $allowed_extensions = '';
 // Favicon path. This can be either a full url to an .PNG image, or a path based on the document root.
 // full path, e.g http://example.com/favicon.png
 // local path, e.g images/icons/favicon.png
-$favicon_path = '/favicon.png';
+$favicon_path = '/diracsea/favicon.ico';
 
 // Array of files and folders excluded from listing
 // e.r array('myfile.html', 'personal-folder')
@@ -126,10 +126,10 @@ $cfg = new FM_Config();
 $lang = isset($cfg->data['lang']) ? $cfg->data['lang'] : 'en';
 
 // Show or hide files and folders that starts with a dot
-$show_hidden_files = isset($cfg->data['show_hidden']) ? $cfg->data['show_hidden'] : true;
+$show_hidden_files = isset($cfg->data['show_hidden']) ? $cfg->data['show_hidden'] : false;
 
 // PHP error reporting - false = Turns off Errors, true = Turns on Errors
-$report_errors = isset($cfg->data['error_reporting']) ? $cfg->data['error_reporting'] : true;
+$report_errors = isset($cfg->data['error_reporting']) ? $cfg->data['error_reporting'] : false;
 
 // Hide Permissions and Owner cols in file-listing
 $hide_Cols = isset($cfg->data['hide_Cols']) ? $cfg->data['hide_Cols'] : true;
