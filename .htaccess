@@ -21,10 +21,6 @@ allow from all
 allow from all
 </files>
 
-<files player.php>
-allow from all
-</files>
-
 <files video.php>
 allow from all
 </files>
@@ -50,10 +46,6 @@ allow from all
 </files>
 
 <files ajax.php>
-allow from all
-</files>
-
-<files files.php>
 allow from all
 </files>
 
