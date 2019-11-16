@@ -1,7 +1,6 @@
 {
-  "name": "Rapidleech",
-  "repository": "https://github.com/Th3-822/rapidleech",
-  "logo": "https://small-sharp-tool.com/logo.svg",
+  "name": "Bakaleechv2",
+  "repository": "https://github.com/ItoshikiMonset/Bakaleechv2",
   "success_url": "",
   "buildpacks": [
     {
