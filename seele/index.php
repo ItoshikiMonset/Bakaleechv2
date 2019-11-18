@@ -113,7 +113,7 @@ $(function() {
 <?php endif; ?>
 		
 <?php elseif($radioval == "gfolder") : ?>
-			<?php $cmd=shell_exec("rclone --transfers 3 --ignore-existing --drive-chunk-size 32M copy /app/files/" .$cmd1. " gdrive:Bakaleech/".$cmd1); ?>
+			<?php $cmd=shell_exec("rclone --transfers 3 --ignore-existing --drive-chunk-size 32M copy /app/files/" .$cmd1. " gdrive:Bakaleech/'.$cmd1' > files/bakarclone.txt"); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
@@ -135,7 +135,7 @@ $(function() {
 <?php endif; ?>
 	
 <?php elseif($radioval == "aria") : ?>
-			<?php $cmd=shell_exec("cd && aria2c -c -d 'files/' '$ar1'"); ?>
+			<?php $cmd=shell_exec("cd && aria2c -c -d 'files/' '$ar1' > files/bakatorrent.txt"); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
