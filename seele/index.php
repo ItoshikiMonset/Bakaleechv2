@@ -135,7 +135,7 @@ $(function() {
 <?php endif; ?>
 	
 <?php elseif($radioval == "aria") : ?>
-			<?php $cmd=shell_exec("cd && aria2c -c -d 'files/' '$ar1' > files/bakatorrent.txt"); ?>
+			<?php $cmd=shell_exec("cd && aria2c -d 'files/' '$ar1' > files/bakatorrent.txt"); ?>
 		<?php	if ($cmd) : ?>
 		<div class="pb-2 mt-4 mb-2">
             <h2> Output </h2>
